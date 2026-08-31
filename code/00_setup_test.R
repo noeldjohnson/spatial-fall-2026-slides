@@ -75,7 +75,10 @@ check(
 
 section("Required packages")
 
-required <- c("tidyverse", "sf", "terra")
+# AER is here for the Week 2 instrumental-variables slides. Unlike units,
+# haven and readxl, which arrive as dependencies of sf and the tidyverse, it
+# needs its own install.
+required <- c("tidyverse", "sf", "terra", "AER")
 
 for (pkg in required) {
   check(

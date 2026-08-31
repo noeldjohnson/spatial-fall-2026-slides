@@ -38,6 +38,24 @@ arrived in. It carries a custom equidistant conic projection with **no EPSG code
 which is exactly why it is in Week 1. `NA` from `st_crs()$epsg` does not mean the
 file is broken. It means somebody built a projection the registry does not name.
 
+### `europe_press_1500.csv` — press adoption dates and city populations
+
+Printing press adoption dates, 1450--1500, and city populations at 1500, 1600,
+1700 and 1800, for 1,019 European cities. Keyed on `city_jjk` so it joins to
+`europe_cities_1801.csv`. Four extra columns carry rivers, Roman roads, capital
+status and communal government, which the Week 2 replication attempt uses.
+
+Extracted from Noel's work in progress on plague, print, and persecution.
+Population is Bairoch and Chandler as assembled in the Johnson and Koyama city
+data, which is the same source Dittmar (2011) uses. The adoption dates descend
+from the standard incunabula lists.
+
+Used in Week 2 for the first stage, the IV estimate, and the attempt to
+reproduce Dittmar's Table VII.
+
+Two names in this file, ALBA and HALLE, each denote two different cities. Week 2
+drops them by hand rather than let a one-to-many join duplicate rows silently.
+
 ### `cps08.csv` — Current Population Survey extract, 2008
 
 The teaching extract distributed with Stock and Watson, *Introduction to

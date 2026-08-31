@@ -12,8 +12,12 @@ in class is here, and it is here **before** class. Pull it before every meeting.
 2. Install the packages.
 
    ```r
-   install.packages(c("tidyverse", "sf", "terra", "s2", "units"))
+   install.packages(c("tidyverse", "sf", "terra", "s2", "units", "AER"))
    ```
+
+   `AER` is new from Week 2 and is the only one that does not arrive as a
+   dependency of the others. `haven`, `readxl` and `units` come with the
+   tidyverse and `sf`.
 
 3. Clone this repository.
 
@@ -44,6 +48,7 @@ That is the whole workflow. If you have edited a file and `pull` complains, see
 ```
 code/00_setup_test.R   check your machine can do what the course needs
 code/week01.R          the code from Week 1, in slide order
+code/week02.R          the code from Week 2, in slide order
 data/                  everything the scripts read. See DATA_SOURCES.md
 slides/                the lecture PDFs
 ```
