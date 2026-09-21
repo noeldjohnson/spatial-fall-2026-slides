@@ -106,6 +106,32 @@ outcome rather than the design.
 
 ---
 
+### `gaez_potato_suitability.tif` — potato suitability, 5 arc-minute raster
+
+The FAO and IIASA Global Agro-Ecological Zones potato suitability surface, global
+coverage at 5 arc-minutes, in WGS84 (EPSG:4326). It is the same product Nunn and
+Qian use to build their treatment in "The Potato's Contribution to Population and
+Urbanization" (*QJE*, 2011), and their Figure II is a map of it.
+
+**Read the scale before you read any number from this file.** It runs *downward*.
+
+| value | meaning | value | meaning |
+|---|---|---|---|
+| 1 | very high | 6 | marginal |
+| 2 | high | 7 | very marginal |
+| 3 | good | 8 | not suitable |
+| 4 | medium | 9 | **inland water** |
+| 5 | moderate | | |
+
+Low numbers are good land. Nine is not a suitability at all, it is water, and it is
+also the largest number on the scale. Take the file at face value and the seven
+cities in our sample that sit on lake or fjord cells become the most potato-suitable
+cities in Europe. Nunn and Qian call land suitable at class 4 or better.
+
+The file carries a grid, a CRS and nine integers. It does not carry any of the above,
+which is the Week 4 lesson about codebooks. Used in Week 4 for the raster material and
+for the difference-in-differences treatment.
+
 ## Reusing any of this
 
 The R code in `code/` is mine and you may reuse it freely, with attribution.

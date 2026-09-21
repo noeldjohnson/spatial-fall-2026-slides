@@ -16,11 +16,11 @@ in class is here, and it is here **before** class. Pull it before every meeting.
                       "sandwich", "lmtest"))
    ```
 
-   `AER` arrived with Week 2, and `sandwich` and `lmtest` with Week 3, where
-   the regression discontinuity takes its standard errors from `coeftest()`
-   and `vcovHC()`. Those three are the ones that do not arrive as a dependency
-   of the others. `haven`, `readxl` and `units` come with the tidyverse and
-   `sf`.
+   `AER` arrived with Week 2, `sandwich` and `lmtest` with Week 3, where the
+   regression discontinuity takes its standard errors from `coeftest()`, and
+   `terra` with Week 4 for raster data. Those are the ones that do not arrive
+   as a dependency of the others. `haven`, `readxl` and `units` come with the
+   tidyverse and `sf`.
 
 3. Clone this repository.
 
@@ -53,6 +53,7 @@ code/00_setup_test.R   check your machine can do what the course needs
 code/week01.R          the code from Week 1, in slide order
 code/week02.R          the code from Week 2, in slide order
 code/week03.R          the code from Week 3, in slide order
+code/week04.R          the code from Week 4, in slide order
 data/                  everything the scripts read. See DATA_SOURCES.md
 slides/                the lecture PDFs
 ```
@@ -60,6 +61,10 @@ slides/                the lecture PDFs
 Each script is organised by slide, so you can read the deck and the code side by
 side. Blocks marked PREDICT are the ones we voted on in class. Commit to an answer
 before you run them.
+
+Week 4's script ends with three appendix blocks we did not run in class. They are
+there because each one is a trap worth meeting once, and because they answer
+questions that came up.
 
 ## If git refuses to pull
 
