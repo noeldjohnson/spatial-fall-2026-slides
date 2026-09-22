@@ -56,6 +56,7 @@ code/week03.R          the code from Week 3, in slide order
 code/week04.R          the code from Week 4, in slide order
 data/                  everything the scripts read. See DATA_SOURCES.md
 slides/                the lecture PDFs
+handouts/              study guides and anything else not graded
 ```
 
 Each script is organised by slide, so you can read the deck and the code side by
@@ -65,6 +66,10 @@ before you run them.
 Week 4's script ends with three appendix blocks we did not run in class. They are
 there because each one is a trap worth meeting once, and because they answer
 questions that came up.
+
+`handouts/lab_exam_study_guide.pdf` covers the lab exam on Monday 5 October. It
+gives the rules, the shape of the paper, what each week contributes, and how it
+is graded. Read it well before the week it is about.
 
 ## If git refuses to pull
 
