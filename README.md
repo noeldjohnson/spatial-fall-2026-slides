@@ -54,6 +54,7 @@ code/week01.R          the code from Week 1, in slide order
 code/week02.R          the code from Week 2, in slide order
 code/week03.R          the code from Week 3, in slide order
 code/week04.R          the code from Week 4, in slide order
+code/week05.R          the code from Week 5, in slide order
 data/                  everything the scripts read. See DATA_SOURCES.md
 slides/                the lecture PDFs
 handouts/              study guides and anything else not graded

@@ -7,3 +7,9 @@
 Rplots.pdf
 
 scratch_*
+
+# Week 5. Files you make yourself in data/wk05: the georeferenced map (the
+# script or QGIS builds it), QGIS's .aux.xml caches, and your railway trace.
+data/wk05/*_georef.tif
+data/wk05/*.aux.xml
+data/wk05/my_rail.gpkg

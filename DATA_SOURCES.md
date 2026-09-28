@@ -132,6 +132,51 @@ The file carries a grid, a CRS and nine integers. It does not carry any of the a
 which is the Week 4 lesson about codebooks. Used in Week 4 for the raster material and
 for the difference-in-differences treatment.
 
+This file is an older GAEZ release, downloaded for the course in 2019, and Nunn and
+Qian used the 2002 release. The current release, version 4, sits on the same grid and
+classifies a real share of cells differently. Week 5 downloads it and compares.
+
+### `wk05/` — the making-data week
+
+**`gold_coast_1911.png`.** A scan of *Map of the Gold Coast, Ashanti and Northern
+Territories*, War Office, 1911, G.S.G.S. No. 2593, printed at the Ordnance Survey
+Office, Southampton, in 1912. The stamp shows it reached the Geographical Section of
+the General Staff map room on 20 March 1912. All of that is printed on the sheet. The
+source of the scan itself is unrecorded. It came to the course in 2022 from Richard
+Bluhm's teaching material. The sheet is long out of copyright.
+
+**`gold_coast_1911_gcps.csv` and `gold_coast_1911.points`.** The six ground control
+points used in class, the same content in two formats. R reads the csv, and QGIS's
+Load GCP Points dialog looks for `.points`. Four sit on graticule crossings and two on
+the towns of Salaga and Dadiaso. Pixel rows are stored as negative numbers, which is
+the QGIS convention.
+
+**`sekondi_kumasi_trace.gpkg`.** One digitized line, the Sekondi–Kumasi railway traced
+from the georeferenced sheet in 67 clicks, 28 September 2026. It was traced on a warp
+whose western longitudes had lost their minus signs, and this copy has them restored.
+
+**`ghana_rail_1911.shp` and `ghana_cities_empty.shp`.** Layers digitized by the 2022
+version of this course. The railway layer holds a partial trace and a stray line. The
+cities layer holds no features at all. Both are here as they were found.
+
+**`gold_coast_1911.qgz`.** The 2022 QGIS project.
+
+**`siHr_wpo.tif`, `siHr_whe.tif`, `siHr_brl.tif`, `siHr_mze.tif`.** FAO and IIASA,
+Global Agro-Ecological Zones version 4 (GAEZ v4), crop suitability index in classes
+for all land in the grid cell, rain-fed, high input, 1981–2010 climate, for white
+potato, wheat, barley and maize. Downloaded 27 September 2026 from
+
+`https://s3.eu-west-1.amazonaws.com/data.gaezdev.aws.fao.org/res05/CRUTS32/Hist/8110H/`
+
+followed by the file name. The codes are 0 no data, 1 to 7 suitability from very high
+to very marginal, 8 not suitable, and 9 water. The ocean is 0, not NA. FAO's requested
+citation is "FAO and IIASA. Global Agro Ecological Zones version 4 (GAEZ v4)," with
+the date accessed.
+
+**Files you make.** `gold_coast_1911_georef.tif` (the week's script or your QGIS
+session builds it), `my_rail.gpkg` (your trace), and any `.aux.xml` file QGIS writes
+are ignored by git, so they never collide with a pull.
+
 ## Reusing any of this
 
 The R code in `code/` is mine and you may reuse it freely, with attribution.
