@@ -1,0 +1,39 @@
+# Language model geocodes of twenty historical city names
+#
+# MODEL      Claude Opus 5 (claude-opus-5), Anthropic
+# DATE       2026-09-06
+# INTERFACE  Claude Code
+#
+# The twenty names were chosen from the German and Austrian entries of
+# europe_cities_1801.csv, seventeen German and three Austrian, and given to the
+# model with no other context.
+#
+# PROMPT, verbatim:
+#   "Here are twenty European city names as they appear in a historical
+#    gazetteer. Give me the latitude and longitude of each in decimal
+#    degrees, WGS84. Return a CSV with columns name, lat, lon, confidence
+#    where confidence is high, medium or low. Do not look anything up; answer
+#    from your own knowledge, which is the point of the exercise."
+#
+# Read with read_csv(..., comment = "#").
+name,lat,lon,confidence
+STRALSUND,54.31,13.09,high
+BONN,50.73,7.10,high
+BADISCHL,47.71,13.62,medium
+MEMMINGEN,47.98,10.18,high
+ERFURT,50.98,11.03,high
+SCHWABACH,49.33,11.02,medium
+PARCHIM,53.43,11.85,medium
+WUELFRATH,51.28,7.04,medium
+KASSEL,51.31,9.50,high
+MARBURG,50.81,8.77,high
+VIERSEN,51.26,6.39,medium
+FREIBERG,50.92,13.34,medium
+WELS,48.16,14.03,high
+RAVENSBURG,47.78,9.61,high
+MEISSEN,51.16,13.47,high
+ANKLAM,53.85,13.69,medium
+HAMBURG,53.55,9.99,high
+HALLE,51.48,11.97,medium
+OSNABRUECK,52.28,8.05,high
+SALZBURG,47.80,13.04,high

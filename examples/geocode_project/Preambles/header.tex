@@ -1,0 +1,65 @@
+% ==============================================================================
+% Preamble: [YOUR PAPER TITLE]
+% ==============================================================================
+
+\documentclass[12pt,letterpaper]{article}
+
+% --- Encoding & Fonts (XeLaTeX) ---
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% --- Page Layout ---
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\doublespacing
+
+% --- Math ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% --- Tables & Figures ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+
+% --- Citations ---
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{aer}
+
+% --- Colors & Links ---
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+% --- Misc ---
+\usepackage{enumitem}
+\usepackage{appendix}
+
+% ==============================================================================
+% Custom Commands: Project-Specific Notation
+% ==============================================================================
+% Define your project-specific notation here. Examples:
+%
+% \newcommand{\treat}{T}        % treatment variable
+% \newcommand{\outcome}{Y}      % outcome variable
+% \newcommand{\effect}{\beta}   % treatment effect
+%
+% Keeping notation in the preamble ensures consistency across all sections.
+
+% Expectations and operators (universally useful)
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\text{Var}}
+
+% ==============================================================================
+% Theorem-like environments
+% ==============================================================================
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{proposition}{Proposition}
+\newtheorem{prediction}{Prediction}

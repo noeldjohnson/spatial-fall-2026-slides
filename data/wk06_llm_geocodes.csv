@@ -1,0 +1,58 @@
+# ECON 895 Week 6 -- frozen language model geocoding transcript
+#
+# WHAT THIS IS. Twenty city names were chosen from the German and Austrian
+# entries of europe_cities_1801.csv (seventeen German, three Austrian) and
+# handed to a language model with no other context. The model returned
+# coordinates from its own knowledge. No seed or sampling code was kept, so
+# call the twenty chosen, not drawn at random. HALLE here means the German
+# Halle, the entry the name was taken from. The gazetteer also holds a Belgian
+# HALLE, which a join on the name alone will attach as well.
+#
+# MODEL      Claude Opus 5 (claude-opus-5), Anthropic
+# DATE       2026-09-06
+# INTERFACE  Claude Code, during the session that built the Week 6 deck
+# TEMPERATURE  not set; default sampling
+#
+# PROMPT, verbatim:
+#   "Here are twenty European city names as they appear in a historical
+#    gazetteer. Give me the latitude and longitude of each in decimal
+#    degrees, WGS84. Return a CSV with columns name, lat, lon, confidence
+#    where confidence is high, medium or low. Do not look anything up; answer
+#    from your own knowledge, which is the point of the exercise."
+#
+# HONESTY NOTE, and it matters pedagogically. This transcript was produced by
+# the assistant that built this deck, not by a separate session in a chat
+# window. That session could read the gazetteer, so the claim that the model
+# answered from memory rests on the instruction in the prompt and cannot be
+# checked from this file. If you would rather the demo used the model
+# the students themselves have, run the prompt above in PatriotAI or claude.ai
+# and replace this file; nothing downstream changes except the header, and the
+# verification code will simply re-run.
+#
+# CORRECTED 4 October 2026. The deck first scored HALLE against both Halles and
+# reported a 546 km model error. The model's answer is the German Halle, 1.9 km
+# out. The 546 km came from the validation join, and the deck now teaches that.
+#
+# The output is a dataset, and a dataset gets validated, including by code that
+# can itself be wrong.
+name,lat,lon,confidence
+STRALSUND,54.31,13.09,high
+BONN,50.73,7.10,high
+BADISCHL,47.71,13.62,medium
+MEMMINGEN,47.98,10.18,high
+ERFURT,50.98,11.03,high
+SCHWABACH,49.33,11.02,medium
+PARCHIM,53.43,11.85,medium
+WUELFRATH,51.28,7.04,medium
+KASSEL,51.31,9.50,high
+MARBURG,50.81,8.77,high
+VIERSEN,51.26,6.39,medium
+FREIBERG,50.92,13.34,medium
+WELS,48.16,14.03,high
+RAVENSBURG,47.78,9.61,high
+MEISSEN,51.16,13.47,high
+ANKLAM,53.85,13.69,medium
+HAMBURG,53.55,9.99,high
+HALLE,51.48,11.97,medium
+OSNABRUECK,52.28,8.05,high
+SALZBURG,47.80,13.04,high

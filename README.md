@@ -55,9 +55,12 @@ code/week02.R          the code from Week 2, in slide order
 code/week03.R          the code from Week 3, in slide order
 code/week04.R          the code from Week 4, in slide order
 code/week05.R          the code from Week 5, in slide order
+code/week06.R          the code from Week 6, in slide order
+code/exercise1_audit.R the audit half of Exercise 1
 data/                  everything the scripts read. See DATA_SOURCES.md
 slides/                the lecture PDFs
 handouts/              study guides and anything else not graded
+examples/              a research project set up from the course template
 ```
 
 Each script is organised by slide, so you can read the deck and the code side by

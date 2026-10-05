@@ -177,6 +177,18 @@ the date accessed.
 session builds it), `my_rail.gpkg` (your trace), and any `.aux.xml` file QGIS writes
 are ignored by git, so they never collide with a pull.
 
+### `wk06_llm_geocodes.csv` — a language model's geocodes of twenty city names
+
+Coordinates for twenty city names from `europe_cities_1801.csv`, seventeen German
+and three Austrian, given by Claude (claude-opus-5) on 6 September 2026 from its
+own memory, with no other context. The model, date, interface and verbatim
+prompt are in the file's comment header; read it with `comment = "#"`. Columns
+are `name`, `lat`, `lon` (decimal degrees, WGS84) and `confidence` (the model's
+own label). Used in Week 6 to validate a model's output against the gazetteer.
+
+The demo project in `examples/geocode_project/` carries a copy of this file and
+of the gazetteer, with their provenance in its `Data/raw/README.md`.
+
 ## Reusing any of this
 
 The R code in `code/` is mine and you may reuse it freely, with attribution.
