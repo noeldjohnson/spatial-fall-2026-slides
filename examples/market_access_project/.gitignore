@@ -1,0 +1,69 @@
+# ==============================================================================
+# .gitignore for Academic Claude Code Projects
+# ==============================================================================
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.synctex.gz
+*.run.xml
+*-blx.bib
+
+# Compiled PDFs (uncomment to track specific PDFs)
+# *.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Rdata
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code local files (not shared across machines)
+.claude/settings.local.json
+.claude/state/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Quarto rendering artifacts
+/.quarto/
+
+# Data files (large/sensitive -- track selectively)
+Data/raw/*.csv
+Data/raw/*.dta
+Data/raw/*.xlsx
+Data/raw/*.zip
+# Uncomment to track processed data:
+# Data/processed/
+
+# R output artifacts
+output/**/*.rds
+
+# Archive (optional -- comment out to track archived content)
+# .archive/
+
+# DEMO EXCEPTION. This teaching example ships its raw data so it runs as cloned.
+!Data/raw/europe_press_1500.csv
+!Data/raw/europe_cities_1801.csv

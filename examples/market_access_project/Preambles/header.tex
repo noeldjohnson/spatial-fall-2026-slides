@@ -1,0 +1,83 @@
+% ==============================================================================
+% Preamble: [YOUR PAPER TITLE]
+% ==============================================================================
+
+\documentclass[12pt,letterpaper]{article}
+
+% --- Encoding & Fonts (XeLaTeX) ---
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% --- Page Layout ---
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+% House style is 1.5x body spacing. Use \setstretch{1.5} explicitly rather than
+% \onehalfspacing. The latter applies setspace's font-size-dependent stretch
+% (about 1.24 at 12pt), which looks closer to 1.25x than to 1.5x.
+\setstretch{1.5}
+
+% --- Math ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+
+% --- Tables & Figures ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,format=hang}
+
+% --- Citations ---
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{aer}
+
+% --- Optional: separate appendix bibliography ---
+% Uncomment the three lines below to give the appendices their own reference
+% list. Appendix citations then use \citetapp and \citepapp, the list is printed
+% with \bibliographyapp{...}, and the compile pipeline gains one step, bibtex app,
+% after bibtex main.
+% \usepackage{multibib}
+% \newcites{app}{References (Appendices)}
+% \bibliographystyleapp{aer}
+
+% --- Colors & Links ---
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+% --- Misc ---
+\usepackage{enumitem}
+\usepackage{appendix}
+\usepackage[hang,flushmargin]{footmisc}
+
+% ==============================================================================
+% Custom Commands: Project-Specific Notation
+% ==============================================================================
+% Define your project-specific notation here. Examples:
+%
+% \newcommand{\treat}{T}        % treatment variable
+% \newcommand{\outcome}{Y}      % outcome variable
+% \newcommand{\effect}{\beta}   % treatment effect
+%
+% Keeping notation in the preamble ensures consistency across all sections.
+
+% Expectations and operators (universally useful)
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\text{Var}}
+
+% ==============================================================================
+% Theorem-like environments
+% ==============================================================================
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{proposition}{Proposition}
+\newtheorem{prediction}{Prediction}

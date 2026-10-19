@@ -189,6 +189,33 @@ own label). Used in Week 6 to validate a model's output against the gazetteer.
 The demo project in `examples/geocode_project/` carries a copy of this file and
 of the gazetteer, with their provenance in its `Data/raw/README.md`.
 
+### `wk07/` — the network week
+
+Four transport layers and a toy network, used in Week 7 to build a cost surface and
+compute market access. The four GeoPackages share one coordinate reference system, an
+equidistant conic for Europe with standard parallels at 43 N and 62 N and meters as
+units. Its PROJ string is in `examples/market_access_project/CLAUDE.md`.
+
+**`roman_roads.gpkg`.** 1,585 line features. The Roman road network from the Digital
+Atlas of Roman and Medieval Civilizations (McCormick et al. 2013, Harvard Center for
+Geographic Analysis), licensed CC BY-NC.
+
+**`medieval_routes.gpkg`.** 56 line features. Medieval trade routes digitized from the
+map in Shepherd's *Historical Atlas* (1923), as used in Johnson and Koyama (2017).
+
+**`rivers.gpkg`.** 184 line features with a `name` column. Major European rivers from
+Natural Earth, public domain.
+
+**`seas.gpkg`.** One multipolygon. Oceans and seas from Natural Earth, public domain,
+clipped to the European window and simplified with a 500 m tolerance. On the 50 km
+course grid the simplification changes no cell.
+
+**`toy_network.csv`.** Six nodes and eight edges with costs, made for the course. It is
+the network on the Dijkstra page at https://noeldjohnson.github.io/teaching/dijkstra/.
+
+The demo project in `examples/market_access_project/` carries copies of the four layers,
+the gazetteer and the population file, with their provenance in its `Data/raw/README.md`.
+
 ## Reusing any of this
 
 The R code in `code/` is mine and you may reuse it freely, with attribution.

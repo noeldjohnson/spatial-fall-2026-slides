@@ -37,3 +37,33 @@ in `joins_rule.md`, beside this file, and ask again.
 
 The same task works in PatriotAI. Paste the request and the first lines of each
 file, then run the script it gives you in R yourself.
+
+## Second example: a cost surface and market access
+
+`market_access_project/` is the same template filled in for Week 7. `Data/raw/`
+holds Roman roads, medieval routes, rivers and seas as GeoPackages, the gazetteer,
+and city populations from 1500 to 1800, with a `README.md` giving each file's
+source. It has no analysis scripts. Its `CLAUDE.md` specifies every choice in the
+construction in words: the grid, the cost of each mode, how a cell counts as
+crossed, the least-cost distance, the rule for cities in the same cell, and the
+market access sum. In class Claude Code writes the scripts from that
+specification and the class checks its numbers against the slides.
+
+```bash
+cp -r examples/market_access_project ~/ma-demo
+cd ~/ma-demo
+git init && git add -A && git commit -m "Start from the template"
+claude
+```
+
+The requests are on the Week 7 slides. The first asks for the cost surface and
+market access for 1800, and the slide after it lists the numbers the answer
+should show.
+
+`ma_counterfactual_checks.R` sits outside the project so the model cannot read or
+edit it. It checks a rivers-as-land counterfactual file for cities whose market
+access rises or is infinite:
+
+```bash
+Rscript examples/ma_counterfactual_checks.R ~/ma-demo
+```
