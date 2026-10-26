@@ -13,13 +13,14 @@ in class is here, and it is here **before** class. Pull it before every meeting.
 
    ```r
    install.packages(c("tidyverse", "sf", "terra", "s2", "units", "AER",
-                      "sandwich", "lmtest", "gdistance"))
+                      "sandwich", "lmtest", "gdistance", "gstat"))
    ```
 
    `AER` arrived with Week 2, `sandwich` and `lmtest` with Week 3, where the
    regression discontinuity takes its standard errors from `coeftest()`, and
    `terra` with Week 4 for raster data. `gdistance` arrived with Week 7 for
-   least-cost distances. Those are the ones that do not arrive
+   least-cost distances and `gstat` with Week 8 for interpolation. Those are the
+   ones that do not arrive
    as a dependency of the others. `haven`, `readxl` and `units` come with the
    tidyverse and `sf`.
 
@@ -58,12 +59,14 @@ code/week04.R          the code from Week 4, in slide order
 code/week05.R          the code from Week 5, in slide order
 code/week06.R          the code from Week 6, in slide order
 code/exercise1_audit.R the audit half of Exercise 1
+code/exercise2_audit.R the audit half of Exercise 2
 data/                  everything the scripts read. See DATA_SOURCES.md
 slides/                the lecture PDFs
 handouts/              study guides and anything else not graded
 examples/              research projects set up from the course template.
-                       In Week 7 Claude Code writes the code, in
-                       examples/market_access_project, so there is no week07.R
+                       In Weeks 7 and 8 Claude Code writes the code, in
+                       examples/market_access_project and examples/surfaces_project,
+                       so there is no week07.R or week08.R
 ```
 
 Each script is organised by slide, so you can read the deck and the code side by

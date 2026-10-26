@@ -67,3 +67,24 @@ access rises or is infinite:
 ```bash
 Rscript examples/ma_counterfactual_checks.R ~/ma-demo
 ```
+
+## Third example: surfaces from points and from satellites
+
+`surfaces_project/` is the template filled in for Week 8. `Data/raw/` holds Black
+Death mortality for 274 cities, the gazetteer, Europe's borders, the Guiot and
+Corona temperature grid, and the 2000 night lights and population rasters for
+Africa, with a `README.md` giving each file's source. It has no analysis scripts.
+Its `CLAUDE.md` specifies the construction in two parts: interpolate mortality to
+every city with an inverse distance power chosen by leave-one-out, and sum lights
+and people by African country. In class Claude Code writes the scripts from that
+specification and the class checks its numbers against the slides.
+
+```bash
+cp -r examples/surfaces_project ~/wk08-demo
+cd ~/wk08-demo
+git init && git add -A && git commit -m "Start from the template"
+claude
+```
+
+The requests are on the Week 8 slides. Each has a slide of the numbers the
+answer should show. The scripts need the `gstat` package.

@@ -1,0 +1,51 @@
+% ==============================================================================
+% Main Document: [YOUR PAPER TITLE]
+% ==============================================================================
+\input{header}
+
+% --- Title ---
+\title{[YOUR PAPER TITLE]}
+
+\author{[YOUR NAME]\\
+  \textit{[YOUR INSTITUTION]}\\
+  \texttt{[YOUR EMAIL]}}
+
+\date{\today}
+
+% ==============================================================================
+\begin{document}
+
+\maketitle
+
+% House style sets the abstract single-spaced inside the 1.5x document.
+\begin{abstract}
+\begin{spacing}{1}
+% TODO: Write abstract.
+\end{spacing}
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ==============================================================================
+% Sections
+% ==============================================================================
+
+\input{sections/introduction}
+\input{sections/background}
+\input{sections/literature}
+\input{sections/model}
+\input{sections/data}
+\input{sections/empirical_strategy}
+\input{sections/results}
+\input{sections/conclusion}
+
+% ==============================================================================
+% Bibliography
+% ==============================================================================
+
+\newpage
+\bibliography{../Bibliography_base}
+
+\end{document}

@@ -216,6 +216,36 @@ the network on the Dijkstra page at https://noeldjohnson.github.io/teaching/dijk
 The demo project in `examples/market_access_project/` carries copies of the four layers,
 the gazetteer and the population file, with their provenance in its `Data/raw/README.md`.
 
+### `wk08/` — surfaces from points and from satellites
+
+**`mort274.csv`.** Black Death mortality, the percent of the population that died in
+1347–1352, for 274 European cities, from Jedwab, Johnson, and Koyama (2019),
+*Negative Shocks and Mass Persecutions: Evidence from the Black Death*, Journal of
+Economic Growth 24(4), 345–395. Columns `city_jjk`, `countrynam`, `longitude`,
+`latitude`, `mortality`. The cities match `europe_cities_1801.csv` by `city_jjk`.
+
+**`guiot_corona_2010.csv` and `guiot_corona_2010_points.csv`.** Guiot and Corona
+(2010), *Growing Season Temperatures in Europe and Climate Forcings over the Past
+1400 Years*, PLoS ONE 5(4), e9972, as archived by NOAA's World Data Center for
+Paleoclimatology (`contributions_by_author/guiot2010/guiot2010europe.txt`,
+downloaded 25 October 2026). April to September temperature anomalies in degrees
+Celsius relative to 1961–1990 on a 5-degree grid of 125 points, here for 1100 to
+1800. Columns `gp`, `lon`, `lat`, `year`, `anomaly`. Anderson, Johnson, and Koyama
+(2017) interpolate this grid to cities.
+
+**`africa_lights_2000.tif`.** DMSP-OLS Nighttime Lights Time Series version 4,
+satellite F15, year 2000, stable lights average visible band, NOAA National
+Geophysical Data Center, cropped to 18W–52E and 35S–38N. 30 arc-second cells with
+a digital number from 0 to 63. Values of 63 are the sensor's ceiling.
+
+**`africa_popdens_2000.tif`.** Gridded Population of the World version 3,
+population density in 2000, unadjusted, persons per square kilometer, CIESIN and
+CIAT, cropped to the same window. 2.5 arc-minute cells. Multiply by cell area
+before summing to a population.
+
+The demo project in `examples/surfaces_project/` carries copies of these files
+with their provenance in its `Data/raw/README.md`.
+
 ## Reusing any of this
 
 The R code in `code/` is mine and you may reuse it freely, with attribution.
