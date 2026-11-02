@@ -1,0 +1,166 @@
+% ==============================================================================
+% beamer-header.tex -- Beamer preamble for research talks
+%
+% The house style is plain. Default theme, white background, no colored header
+% bar or footline, 9pt, 4:3. Figures carry most of the argument, frames often
+% pair an image column with a text column, and emphasis is done with muted text
+% color.
+%
+% Two parameters, each a one-word change in the \documentclass line.
+%   aspect ratio  4:3 by default. Add aspectratio=169 for widescreen.
+%   font size     9pt by default. Use 10pt or 11pt if a room needs it.
+%
+% Frame content is vertically centered, the beamer default. For a long course
+% deck add the class option t, as in \documentclass[9pt,t]{beamer}, so content
+% is top-aligned and stays put from slide to slide.
+%
+% Usage. A deck in Slides/ begins with \input{../Preambles/beamer-header.tex}
+% and compiles from Slides/ with
+%   xelatex -interaction=nonstopmode deck.tex
+%   BIBINPUTS=..:$BIBINPUTS bibtex deck     (only if the deck cites)
+%   xelatex -interaction=nonstopmode deck.tex
+% XeLaTeX is required because fontspec is loaded below. Figures resolve from
+% Figures/, so \includegraphics{fig1} finds Figures/fig1.pdf.
+% ==============================================================================
+
+\documentclass[9pt]{beamer}
+
+% ------------------------------------------------------------------------------
+% Theme
+% ------------------------------------------------------------------------------
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+
+% ------------------------------------------------------------------------------
+% Packages
+% ------------------------------------------------------------------------------
+\usepackage{amsmath,amssymb,tcolorbox}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{graphicx}
+% adjustbox[export] adds the frame key to \includegraphics, so
+% \includegraphics[width=\linewidth, frame]{...} draws a thin border.
+\usepackage[export]{adjustbox}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage[authoryear,round]{natbib}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+\usepackage{caption}
+% Removes the "Figure:" prefix from captions.
+\captionsetup[figure]{name=}
+
+\graphicspath{{../Figures/}{./Figures/}}
+
+% ------------------------------------------------------------------------------
+% Palette. Emphasis uses the two muted text colors below. The named colors let
+% TikZ diagrams reuse the same palette.
+% ------------------------------------------------------------------------------
+\definecolor{houseblue}{RGB}{31,58,110}    % matches blue!70!black
+\definecolor{housered}{RGB}{140,27,27}     % matches red!70!black
+
+% ------------------------------------------------------------------------------
+% Emphasis
+%   \term{...}   a defined term or key phrase, bold muted blue
+%   \alert{...}  a warning or the one thing to notice, bold muted red
+%   \muted{...}  secondary text, gray
+%   \code{...}   inline code
+% ------------------------------------------------------------------------------
+\newcommand{\term}[1]{\textbf{\textcolor{blue!70!black}{#1}}}
+\renewcommand{\alert}[1]{\textbf{\textcolor{red!70!black}{#1}}}
+\newcommand{\muted}[1]{\textcolor{gray}{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+% ------------------------------------------------------------------------------
+% Title frame
+%   \titleframe{Title}{Authors and affiliations}{Venue and date}{email}
+% ------------------------------------------------------------------------------
+\newcommand{\titleframe}[4]{%
+  \begin{frame}[c]
+    \centering
+    \huge{#1}\\
+    \vspace{0.25in}
+    \normalsize{#2}\\
+    \vspace{0.25in}
+    \footnotesize{#3}\\
+    \vspace{.15in}
+    \footnotesize{This Version: \today}\\
+    \vspace{.25in}
+    \href{mailto:#4}{#4}
+  \end{frame}%
+}
+
+% ------------------------------------------------------------------------------
+% Figure frames
+% ------------------------------------------------------------------------------
+
+% \source{...}  small gray attribution line under an image
+\newcommand{\source}[1]{%
+  \par\vspace{2pt}%
+  {\scriptsize\textcolor{gray}{Source: #1}\par}%
+}
+
+% \figframe{Title}{graphic}{caption}   one figure in a titled frame
+\newcommand{\figframe}[3]{%
+  \begin{frame}{#1}
+    \begin{center}
+      \includegraphics[width=\textwidth,height=0.80\textheight,keepaspectratio]{#2}
+    \end{center}
+    {\scriptsize\textcolor{gray}{#3}\par}
+  \end{frame}%
+}
+
+% \fullfigframe{graphic}{caption}      one figure, no title, maximum size
+\newcommand{\fullfigframe}[2]{%
+  \begin{frame}[plain]
+    \begin{center}
+      \includegraphics[width=\textwidth,height=0.90\textheight,keepaspectratio]{#1}
+    \end{center}
+    {\scriptsize\textcolor{gray}{#2}\par}
+  \end{frame}%
+}
+
+% ------------------------------------------------------------------------------
+% keybox. One quiet box for the single takeaway of a frame. Use it rarely.
+% ------------------------------------------------------------------------------
+\newtcolorbox{keybox}{
+  colback=black!3, colframe=orange!55!black,
+  boxrule=0.6pt, arc=1pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+% ------------------------------------------------------------------------------
+% Listings
+% ------------------------------------------------------------------------------
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{blue!70!black}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{green!40!black},
+  frame=single,
+  framerule=0.4pt,
+  rulecolor=\color{gray!50},
+  breaklines=true,
+  numbers=none,
+  showstringspaces=false,
+  tabsize=2
+}
+
+% ------------------------------------------------------------------------------
+% Section dividers. Each \section{...} produces a plain frame with its title.
+% ------------------------------------------------------------------------------
+\AtBeginSection[]{%
+  \begin{frame}[plain,c]
+    \begin{center}
+      {\usebeamercolor[fg]{structure}\Large\bfseries\insertsection}
+    \end{center}
+  \end{frame}%
+}

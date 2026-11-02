@@ -1,0 +1,108 @@
+% ==============================================================================
+% example_talk.tex -- a worked example of the house Beamer style
+%
+% Each frame demonstrates one layout. Copy the frame you need into your own deck
+% and replace the placeholder images, which come from the mwe package that ships
+% with TeX Live.
+%
+% Compile from Slides/ with
+%   xelatex -interaction=nonstopmode example_talk.tex
+% ==============================================================================
+\input{../Preambles/beamer-header.tex}
+
+\begin{document}
+
+% --- Title frame -------------------------------------------------------------
+\titleframe{[YOUR TALK TITLE]}%
+  {[YOUR NAME] ([YOUR INSTITUTION])}%
+  {[VENUE], [MONTH YEAR]}%
+  {[YOUR EMAIL]}
+
+% --- A sentence title with an image column and a text column -----------------
+\begin{frame}{A frame title is a plain topic or a full sentence stating the finding}
+\begin{columns}[T,onlytextwidth]
+\column{0.38\textwidth}
+\centering
+\includegraphics[width=\linewidth, frame]{example-image-a}
+\source{name the archive, dataset, or paper}
+\column{0.56\textwidth}
+\begin{itemize}
+  \item The image column is 38 percent of the text width and the text column is
+        56 percent.
+  \item[]
+  \item An empty \code{\textbackslash item[]} adds vertical space between
+        bullets.
+  \item[]
+  \item \term{Key terms} are bold muted blue. \alert{Warnings} are bold muted
+        red. \muted{Secondary text is gray.}
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\section{Evidence}
+
+% --- One figure, with a title ------------------------------------------------
+\figframe{The figure frame gives one figure the full width}{example-image}{The
+caption is small and gray. State what is plotted, the sample, and the source.}
+
+% --- One figure, no title ----------------------------------------------------
+\fullfigframe{example-image-b}{A plain frame for a figure that needs the whole
+slide. The caption states what the audience is looking at.}
+
+% --- Two images compared -----------------------------------------------------
+\begin{frame}{Two images side by side with a colored label above each}
+\begin{columns}[T,onlytextwidth]
+\column{0.42\textwidth}
+\centering
+\textbf{\textcolor{blue!70!black}{Before}}\\[0.3em]
+\includegraphics[width=\linewidth, frame]{example-image-a}\\[0.5em]
+\scriptsize
+\textcolor{gray}{One line saying what this image shows}
+\column{0.42\textwidth}
+\centering
+\textbf{\textcolor{red!70!black}{After}}\\[0.3em]
+\includegraphics[width=\linewidth, frame]{example-image-b}\\[0.5em]
+\scriptsize
+\textcolor{gray}{One line saying what this image shows}
+\end{columns}
+\end{frame}
+
+% --- A results table ---------------------------------------------------------
+\begin{frame}{Tables use booktabs rules and no vertical lines}
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) & (2) \\
+ & Outcome A & Outcome B \\
+\midrule
+Treatment          & 0.023   & 0.041   \\
+                   & (0.008) & (0.015) \\
+\midrule
+Unit fixed effects & Yes     & Yes     \\
+Year fixed effects & Yes     & Yes     \\
+Observations       & 1{,}884 & 1{,}884 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{0.5em}
+\muted{\footnotesize Standard errors in parentheses, clustered by unit. Write
+thousands with a thin separator, as in 1{,}884.}
+\end{frame}
+
+% --- The single takeaway -----------------------------------------------------
+\begin{frame}{The keybox holds the one takeaway of a frame}
+\begin{itemize}
+  \item State the result in plain language and give its magnitude in units the
+        audience can interpret.
+  \item[]
+  \item A one-unit increase in the treatment is associated with a
+        \term{0.5 standard deviation} increase in the outcome.
+\end{itemize}
+\vspace{0.8em}
+\begin{keybox}
+Use at most one box on a frame, and on few frames. Most frames need none.
+\end{keybox}
+\end{frame}
+
+\end{document}

@@ -88,3 +88,21 @@ claude
 
 The requests are on the Week 8 slides. Each has a slide of the numbers the
 answer should show. The scripts need the `gstat` package.
+
+## Fourth example: spatial noise and standard errors
+
+`persistence_project/` is the template filled in for Week 9. `Data/raw/` holds the
+Week 2 gazetteer, the printing and population file, and Europe's borders, with a
+`README.md` giving each file's source. It has no analysis scripts. Its `CLAUDE.md`
+specifies Conley and Kelly's spatial-noise placebo and five standard errors for the
+Week 2 first stage. In class Claude Code writes the script from that specification
+and the class checks its numbers against the slides.
+
+```bash
+cp -r examples/persistence_project ~/wk09-demo
+cd ~/wk09-demo
+git init && git add -A && git commit -m "Start from the template"
+claude
+```
+
+The script needs `sandwich`, `cluster`, and `conleyreg`. It takes about two minutes.
