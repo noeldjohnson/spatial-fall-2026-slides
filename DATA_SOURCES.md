@@ -246,6 +246,29 @@ before summing to a population.
 The demo project in `examples/surfaces_project/` carries copies of these files
 with their provenance in its `Data/raw/README.md`.
 
+### `wk10/` — the first text week
+
+**`ustc_english_titles.csv`.** The English-language records of the Universal Short
+Title Catalogue (USTC, University of St Andrews, ustc.ac.uk), 1455–1650. There are
+52,265 titles with columns `id` (the USTC number), `short_title`, `place`, `year`,
+and `classification1` (the USTC subject class). Extracted from Noel Johnson's
+research copy of the catalogue. Records with no title or no year are dropped. Cite
+the USTC when you use it.
+
+**`stopwords_early_modern.txt`.** quanteda's English stop-word list, the u/v and i/j
+spelling variants of its words, archaic function words such as thee, hath, and vnto,
+and title boilerplate such as printed, newly, and london. One word per line. Lines
+starting with `#` are comments. Written for this course. It removes "london", so
+do not use it for a question about places.
+
+**`spelling_rules.csv`.** Eleven regular expressions that map common early-modern
+spellings to modern ones, such as vnto to unto and haue to have. Apply them in order
+to each lowercase token with Perl-compatible regular expressions. Written for this
+course.
+
+The demo project in `examples/text_project/` carries copies of these files with
+their provenance in its `Data/raw/README.md`.
+
 ## Reusing any of this
 
 The R code in `code/` is mine and you may reuse it freely, with attribution.

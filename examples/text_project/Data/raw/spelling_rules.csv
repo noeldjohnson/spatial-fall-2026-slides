@@ -1,0 +1,12 @@
+rule,pattern,replacement,example_before,example_after,note
+1,"vv",w,vvith,with,a doubled v stood for w
+2,"^v(?=[b-df-hj-np-tv-z])",u,vnto,unto,initial v before a consonant stood for u
+3,"(?<=[aeiou])u(?=[aeiou])",v,haue,have,u between two vowels stood for v
+4,"^i(?=[aeou])",j,iudgement,judgement,initial i before a vowel often stood for j
+5,"^maiest",majest,maiestie,majesty,i for j inside majesty
+6,"(?<=[a-z]{3})ie$",y,mercie,mercy,final -ie for -y in words of five letters or more
+7,"(oo|ee)([b-df-hj-np-tv-z])e$",\1\2,booke,book,silent final e after a double vowel and a consonant
+8,"^yeer",year,yeere,year,a fixed form
+9,"(?<=[a-z]{4})ll$",l,generall,general,doubled final l in words of six letters or more
+10,"(?<=[a-z]{3})ick$",ic,publick,public,-ick for -ic
+11,"^newes$",news,newes,news,a fixed form

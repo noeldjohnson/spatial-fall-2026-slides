@@ -106,3 +106,24 @@ claude
 ```
 
 The script needs `sandwich`, `cluster`, and `conleyreg`. It takes about two minutes.
+
+## Fifth example: two preprocessing pipelines
+
+`text_project/` is the template filled in for Week 10. `Data/raw/` holds 52,265
+English-language titles from the Universal Short Title Catalogue, 1455--1650, an
+early-modern stop-word list, and a file of spelling rules, with a `README.md`
+describing each. It has no analysis scripts. Its `CLAUDE.md` specifies two
+preprocessing pipelines in words and the comparison to report: matrix size, tf-idf
+terms by decade, cosine between decades, nearest titles, two dictionaries, and an
+eight-topic model. In class Claude Code writes the script and the class checks its
+numbers against the slides.
+
+```bash
+cp -r examples/text_project ~/wk10-demo
+cd ~/wk10-demo
+git init && git add -A && git commit -m "Start from the template"
+claude
+```
+
+The script needs `quanteda`, `topicmodels`, and `Matrix`. It takes about fifteen
+seconds.

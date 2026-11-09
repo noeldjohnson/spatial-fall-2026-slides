@@ -14,16 +14,18 @@ in class is here, and it is here **before** class. Pull it before every meeting.
    ```r
    install.packages(c("tidyverse", "sf", "terra", "s2", "units", "AER",
                       "sandwich", "lmtest", "gdistance", "gstat", "conleyreg",
-                     "cluster"))
+                      "cluster", "quanteda", "tidytext", "SnowballC",
+                      "topicmodels"))
    ```
 
    `AER` arrived with Week 2, `sandwich` and `lmtest` with Week 3, where the
    regression discontinuity takes its standard errors from `coeftest()`, and
    `terra` with Week 4 for raster data. `gdistance` arrived with Week 7 for
    least-cost distances, `gstat` with Week 8 for interpolation, and `conleyreg`
-   and `cluster` with Week 9 for Conley standard errors and k-medoids clusters. Those are the
-   ones that do not arrive
-   as a dependency of the others. `haven`, `readxl` and `units` come with the
+   and `cluster` with Week 9 for Conley standard errors and k-medoids clusters.
+   `quanteda`, `tidytext`, `SnowballC`, and `topicmodels` arrived with Week 10 for
+   text as data. Those are the ones that do not arrive as a dependency of the
+   others. `haven`, `readxl` and `units` come with the
    tidyverse and `sf`.
 
 3. Clone this repository.
@@ -66,10 +68,10 @@ data/                  everything the scripts read. See DATA_SOURCES.md
 slides/                the lecture PDFs
 handouts/              study guides and anything else not graded
 examples/              research projects set up from the course template.
-                       In Weeks 7 to 9 Claude Code writes the code, in
+                       In Weeks 7 to 10 Claude Code writes the code, in
                        examples/market_access_project, examples/surfaces_project,
-                       and examples/persistence_project, so there is no week07.R,
-                       week08.R, or week09.R
+                       examples/persistence_project, and examples/text_project,
+                       so there is no week07.R to week10.R
 ```
 
 Each script is organised by slide, so you can read the deck and the code side by
