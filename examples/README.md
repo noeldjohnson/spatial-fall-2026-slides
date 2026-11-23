@@ -127,3 +127,24 @@ claude
 
 The script needs `quanteda`, `topicmodels`, and `Matrix`. It takes about fifteen
 seconds.
+
+## Sixth example: probing a word embedding
+
+`embeddings_project/` is the template filled in for Week 11. `Data/raw/` holds the
+52,265 English-language titles from the Universal Short Title Catalogue, 1455--1650,
+that Week 10 used, with a `README.md`. It has no analysis scripts. Its `CLAUDE.md`
+specifies a baseline word embedding (English stop words removed, a five-word window, a
+floor of 20 occurrences, PPMI, and a 200-dimensional SVD), six variants that each
+change one choice, and the comparison to report: the ten nearest words to five seed
+words under every run, and the five nearest titles to a 1636 plague title. In class
+Claude Code writes the script and the class checks its numbers against the slides.
+
+```bash
+cp -r examples/embeddings_project ~/wk11-demo
+cd ~/wk11-demo
+git init && git add -A && git commit -m "Start from the template"
+claude
+```
+
+The script needs `quanteda`, `Matrix`, `RSpectra`, and `word2vec`. It takes about a
+minute.
